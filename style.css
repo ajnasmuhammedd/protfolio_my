@@ -870,19 +870,19 @@ main {
 
 
 
+/* ===== Portfolio Section ===== */
 
-/*-----------------------------------*\
-  #PORTFOLIO
-\*-----------------------------------*/
+.portfolio {
+  margin-top: 30px;
+}
 
-.filter-list { display: none; }
-
-.filter-select-box {
+/* Filter box (optional dropdown for category selection) */
+.portfolio-filter {
   position: relative;
   margin-bottom: 25px;
 }
 
-.filter-select {
+.portfolio-filter-btn {
   background: var(--eerie-black-2);
   color: var(--light-gray);
   display: flex;
@@ -894,11 +894,14 @@ main {
   border-radius: 14px;
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
+  cursor: pointer;
 }
 
-.filter-select.active .select-icon { transform: rotate(0.5turn); }
+.portfolio-filter-btn.active .filter-icon {
+  transform: rotate(0.5turn);
+}
 
-.select-list {
+.portfolio-filter-list {
   background: var(--eerie-black-2);
   position: absolute;
   top: calc(100% + 6px);
@@ -913,13 +916,13 @@ main {
   transition: 0.15s ease-in-out;
 }
 
-.filter-select.active + .select-list {
+.portfolio-filter-btn.active + .portfolio-filter-list {
   opacity: 1;
   visibility: visible;
   pointer-events: all;
 }
 
-.select-item button {
+.portfolio-filter-item button {
   background: var(--eerie-black-2);
   color: var(--light-gray);
   font-size: var(--fs-6);
@@ -930,75 +933,51 @@ main {
   border-radius: 8px;
 }
 
-.select-item button:hover { --eerie-black-2: hsl(240, 2%, 20%); }
+.portfolio-filter-item button:hover {
+  background: hsl(240, 2%, 20%);
+}
 
+/* ===== Project Grid ===== */
 .project-list {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
   margin-bottom: 10px;
 }
 
-.project-item { display: none; }
-
-.project-item.active {
-  display: block;
-  animation: scaleUp 0.25s ease forwards;
+.project-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--eerie-black-2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
 }
 
-@keyframes scaleUp {
-  0% { transform: scale(0.5); }
-  100% { transform: scale(1); }
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
-
-.project-item > a { width: 100%; }
 
 .project-img {
   position: relative;
   width: 100%;
   height: 200px;
-  border-radius: 16px;
   overflow: hidden;
-  margin-bottom: 15px;
 }
 
 .project-img::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: transparent;
-  z-index: 1;
   transition: var(--transition-1);
-}
-
-.project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
-
-.project-item-icon-box {
-  --scale: 0.8;
-
-  background: var(--jet);
-  color: var(--orange-yellow-crayola);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(var(--scale));
-  font-size: 20px;
-  padding: 18px;
-  border-radius: 12px;
-  opacity: 0;
   z-index: 1;
-  transition: var(--transition-1);
 }
 
-.project-item > a:hover .project-item-icon-box {
-  --scale: 1;
-  opacity: 1;
+.project-card:hover .project-img::before {
+  background: rgba(0, 0, 0, 0.5);
 }
-
-.project-item-icon-box ion-icon { --ionicon-stroke-width: 50px; }
 
 .project-img img {
   width: 100%;
@@ -1007,17 +986,45 @@ main {
   transition: var(--transition-1);
 }
 
-.project-item > a:hover img { transform: scale(1.1); }
+.project-card:hover .project-img img {
+  transform: scale(1.1);
+}
 
-.project-title,
-.project-category { margin-left: 10px; }
+.project-icon {
+  --scale: 0.8;
+  background: var(--jet);
+  color: var(--orange-yellow-crayola);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--scale));
+  font-size: 20px;
+  padding: 16px;
+  border-radius: 12px;
+  opacity: 0;
+  z-index: 2;
+  transition: var(--transition-1);
+}
+
+.project-card:hover .project-icon {
+  --scale: 1;
+  opacity: 1;
+}
+
+.project-icon ion-icon {
+  --ionicon-stroke-width: 50px;
+}
+
+.project-info {
+  padding: 10px 15px;
+}
 
 .project-title {
   color: var(--white-2);
   font-size: var(--fs-5);
   font-weight: var(--fw-400);
   text-transform: capitalize;
-  line-height: 1.3;
+  margin-bottom: 4px;
 }
 
 .project-category {
@@ -1025,8 +1032,6 @@ main {
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
 }
-
-
 
 
 
