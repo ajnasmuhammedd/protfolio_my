@@ -318,6 +318,7 @@ main {
 .avatar-box {
   background: var(--bg-gradient-onyx);
   object-fit: cover;
+  height: 150px;
   border-radius: 50%;
 }
 
