@@ -331,6 +331,14 @@ main {
   object-fit: cover; /* makes the image fill the circle */
   display: block;
 }
+@media(max-width:768px){
+  .avatar-box{
+    width: 120px;
+    height: 120px;
+  }
+} 
+  
+
 
 
 .info-content .name {
