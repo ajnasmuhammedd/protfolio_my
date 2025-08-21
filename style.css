@@ -316,8 +316,9 @@ main {
 }
 
 .avatar-box {
-  
-  border-radius: 40px;
+  background: var(--bg-gradient-onyx);
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .info-content .name {
