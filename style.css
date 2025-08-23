@@ -329,7 +329,7 @@ main {
 
 .avatar-box img {
   width: 80px;
-  height: 100px;
+  height: 80px;
    border-radius: 50%;
   object-fit: cover; /* makes the image fill the circle */
   display: block;
@@ -337,7 +337,7 @@ main {
 @media(max-width:768px){
   .avatar-box{
     width: 80px;
-    height: 100px;
+    height: 80px;
   }
 } 
   
