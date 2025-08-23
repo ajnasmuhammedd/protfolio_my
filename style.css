@@ -335,8 +335,8 @@ main {
 }
 @media(max-width:768px){
   .avatar-box{
-    width: auto;
-    height: auto;
+    width: 80px;
+    height: 100px;
   }
 } 
   
