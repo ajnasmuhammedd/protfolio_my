@@ -330,6 +330,7 @@ main {
 .avatar-box img {
   width: auto;
   height: auto;
+   border-radius: 50%;
   object-fit: cover; /* makes the image fill the circle */
   display: block;
 }
