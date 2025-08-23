@@ -316,7 +316,7 @@ main {
 }
 
 .avatar-box {
-  width: 30vw;
+  width: 25vw;
   max-width: 150px;
   border-radius: 50%;
   overflow: hidden; /* clips the image inside the circle */
