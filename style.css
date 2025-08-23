@@ -301,11 +301,14 @@ main {
 .sidebar {
   margin-bottom: 15px;
   max-height: none;
-  overflow: visible;
+  overflow: hidden;
   transition: var(--transition-2);
 }
 
-.sidebar.active { max-height: none; }
+.sidebar.active { 
+  max-height: none;
+  overflow: visible;
+ }
 
 .sidebar-info {
   position: relative;
