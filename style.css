@@ -366,6 +366,7 @@ main {
 
 .info_more-btn {
   position: absolute;
+  margin-top: 10px;
   top: -15px;
   right: -15px;
   border-radius: 0 15px;
