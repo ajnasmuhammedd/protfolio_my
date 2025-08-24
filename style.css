@@ -306,7 +306,7 @@ main {
 }
 
 .sidebar.active { 
-  max-height: 500px;
+  max-height: 1000px;
   overflow: visible;
  }
 
