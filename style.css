@@ -300,13 +300,13 @@ main {
 
 .sidebar {
   margin-bottom: 15px;
-  max-height: none;
+  max-height: 0;
   overflow: hidden;
-  transition: var(--transition-2);
+  transition: max-height 0.5s ease;
 }
 
 .sidebar.active { 
-  max-height: none;
+  max-height: 500px;
   overflow: visible;
  }
 
