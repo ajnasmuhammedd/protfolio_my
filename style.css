@@ -364,12 +364,8 @@ main {
   border-radius: 8px;
 }
 
-
 .info_more-btn {
-  position: relative;   /* instead of absolute */
-  top: auto;
-  right: auto;
-  margin: 15px auto 0;  /* center below photo */
+  margin: 15px auto 0;         /* arrow center il thazhe */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -380,6 +376,11 @@ main {
   padding: 8px 12px;
   box-shadow: var(--shadow-2);
   transition: var(--transition-1);
+  cursor: pointer;
+}
+
+.info_more-btn:hover {
+  background: var(--bg-gradient-onyx);
 }
 
 
